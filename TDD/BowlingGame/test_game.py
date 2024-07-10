@@ -32,7 +32,7 @@ class TestGame(TestCase):
 
         self.assertEqual(3, game.score())
 
-    @skip
+    # @skip
     def test_스페어(self):
         game = Game()
         game.roll(3)
