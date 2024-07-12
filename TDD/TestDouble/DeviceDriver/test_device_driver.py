@@ -26,6 +26,7 @@ class DeviceDriverTest(TestCase):
         self.assertEqual('ReadFailException', str(context.exception))
 
     def test_write_success(self):
+        # hardware call_once 필요
         self.hardware.read.return_value = 0xFF
         self.assertIsNone(self.driver.write(0xFF, 0x10))
         self.assertEqual(1, self.hardware.read.call_count)
